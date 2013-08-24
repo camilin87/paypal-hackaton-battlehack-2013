@@ -2,4 +2,66 @@
     ViewBag.Title = "Thankyou";
     Layout = null;
 }
-<h2>Thank You!</h2>
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>Funds4Kids - Thank You</title>
+        <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+        <meta name="viewport" content="width=device-width" />
+        @Styles.Render("~/Content/css")
+        @Styles.Render("~/Content/bootstrap/css")
+        @Scripts.Render("~/bundles/modernizr")
+    </head>
+    <body>
+        <div class="container">
+            <br/>
+            <br/>
+            <br/>
+            <div class="row">
+                <div class="span12 pagination-centered">
+                    <h2>Thank You</h2>
+                    <h3>You help has been appreciated!</h3>
+                </div>
+            </div>
+            <br/>
+            <div class="row">
+                <div class="span12 pagination-centered">
+                    <h3>Here you can see the progress for the event before ... </h3>
+                </div>
+            </div>
+            <div class="row">
+                <div class="span12 pagination-centered">
+                    <div class="span1"></div>
+                    <div class="span10">
+                        <div class="progress progress-success" style="height: 30px;">
+                            <div class="bar" style="width: 40%"></div>
+                        </div>
+                    </div>
+                    <div class="span1"></div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="span12 pagination-centered">
+                    <h3>And after your input</h3>
+                </div>
+            </div>
+            <div class="row">
+                <div class="span12 pagination-centered">
+                    <div class="span1"></div>
+                    <div class="span10">
+                        <div class="progress progress-danger progress-striped active" style="height: 30px;">
+                            <div class="bar" style="width: 45%"></div>
+                        </div>
+                    </div>
+                    <div class="span1"></div>
+                </div>
+            </div>
+
+        </div>
+            
+        <!-- .container -->
+        @Scripts.Render("~/bundles/jquery")
+        @Scripts.Render("~/bundles/boostrap")
+    </body>
+</html>
