@@ -4,9 +4,6 @@
 .donate-button {
     margin-right: 2%;
     margin-left: 2%;
-    min-height: 100px;
-    min-width: 80px;
-    font-size: 50px;
     padding-top: 15%;
     padding-bottom: 5%;
     padding-left: 7%;
@@ -24,3 +21,21 @@ a:hover, a:focus {
 
 
 /************************************************************************************************/
+
+
+/********************
+*   Mobile Styles   *
+********************/
+@media only screen and (max-width: 850px) {
+    .donate-button {
+        margin-right: 2%;
+        margin-left: 2%;
+        min-height: 100px;
+        min-width: 80px;
+        font-size: 50px;
+        padding-top: 15%;
+        padding-bottom: 5%;
+        padding-left: 7%;
+        padding-right: 7%;
+    }
+}
