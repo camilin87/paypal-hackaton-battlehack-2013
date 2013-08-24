@@ -179,12 +179,12 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\EventsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="DTO\EventDTO.cs" />
     <Compile Include="Filters\InitializeSimpleMembershipAttribute.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Helpers\EventsManager.cs" />
+    <Compile Include="Helpers\IEventsManager.cs" />
     <Compile Include="Helpers\IPaymentsManager.cs" />
     <Compile Include="Helpers\Funds4KidsContext.cs" />
     <Compile Include="Helpers\IFunds4KidsContext.cs" />
