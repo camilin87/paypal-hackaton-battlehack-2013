@@ -15,9 +15,9 @@ namespace Funds4Kids.Helpers
         }
 
         public DbSet<UserProfile> UserProfiles { get; set; }
-        public DbSet<EventCoordinator> Denominations { get; set; }
-        public DbSet<EventCoordinator> Donations { get; set; }
-        public DbSet<EventCoordinator> EventInfos { get; set; }
+        public DbSet<Denomination> Denominations { get; set; }
+        public DbSet<Donation> Donations { get; set; }
+        public DbSet<EventInfo> EventInfos { get; set; }
         public DbSet<EventCoordinator> EventCoordinators { get; set; }
     }
 }
