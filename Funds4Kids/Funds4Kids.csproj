@@ -326,6 +326,9 @@
     <Content Include="Views\Events\Thankyou.cshtml" />
     <Content Include="Views\Events\CancelPayment.cshtml" />
     <Content Include="Views\Events\Event.cshtml" />
+    <Content Include="Views\Events\CreateEvent.cshtml" />
+    <Content Include="Views\Events\EditEvent.cshtml" />
+    <Content Include="Views\Events\EventDetails.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

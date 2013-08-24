@@ -1,0 +1,57 @@
+﻿@model Funds4Kids.Models.EventInfo
+
+@{
+    ViewBag.Title = "EventDetails";
+}
+
+<h2>EventDetails</h2>
+
+<fieldset>
+    <legend>EventInfo</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Name)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Name)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Description)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Description)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.ImageUrl)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ImageUrl)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.CloseDate)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.CloseDate)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Goal)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Goal)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.EventCoordinatorId)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.EventCoordinatorId)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
