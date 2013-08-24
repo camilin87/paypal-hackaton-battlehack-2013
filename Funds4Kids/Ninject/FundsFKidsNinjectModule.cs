@@ -14,6 +14,7 @@ namespace Funds4Kids.Ninject
         {
             //Setup Injections
             Bind<IPaymentsManager>().To<PaymentsManager>().InRequestScope();
+            Bind<IEventsManager>().To<EventsManager>().InRequestScope();
         }
     }
 }

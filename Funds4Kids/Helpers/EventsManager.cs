@@ -6,7 +6,7 @@ using System.Web;
 
 namespace Funds4Kids.Helpers
 {
-    public class EventsManager
+    public class EventsManager : IEventsManager
     {
         private IFunds4KidsContext Db { get; set; }
 

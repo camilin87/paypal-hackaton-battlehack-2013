@@ -13,14 +13,16 @@ namespace Funds4Kids.Controllers
         [Inject]
         public IPaymentsManager PaymentsManager { get; set; }
 
+        [Inject]
+        public IEventsManager EventsManager { get; set; }
+
         //
         // GET: /Events/
 
-        public ActionResult Event()
+        public ActionResult Event(int eventId)
         {
-            //Get event info from database
-
-            return View();
+            var currentEvent = EventsManager.GetEvent(eventId);
+            return View(currentEvent);
         }
 
         [HttpPost]
