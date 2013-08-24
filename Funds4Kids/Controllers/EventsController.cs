@@ -4,11 +4,13 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using Funds4Kids.Helpers;
+using Ninject;
 
 namespace Funds4Kids.Controllers
 {
     public class EventsController : Controller
     {
+        [Inject]
         public IPaymentsManager PaymentsManager { get; set; }
 
         //
@@ -21,11 +23,17 @@ namespace Funds4Kids.Controllers
             return View();
         }
 
-        public ActionResult Fund()
+        [HttpPost]
+        public void Fund(int eventId, int amount, string senderEmail)
         {
-            var response = PaymentsManager.Pay("sender", "receiver", 1m, "http://localhost/Events/Thankyou",
+            string receiverEmail = "user1@abdolphin.com"; //Get email for receiver
+            var redirectUrl = PaymentsManager.Pay(senderEmail, receiverEmail, Convert.ToDecimal(amount), "http://localhost/Events/Thankyou",
                                 "http://localhost/Events/CancelPayment");
-            return View();
+
+            Session["CurrentEmail"] = senderEmail;
+            Session["CurrentAmount"] = amount;
+
+            Response.Redirect(redirectUrl);
         }
 
         public ActionResult Thankyou()
