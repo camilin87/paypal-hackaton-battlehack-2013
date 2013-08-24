@@ -177,7 +177,7 @@
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountModels.cs" />
     <Compile Include="Models\Donation.cs" />
-    <Compile Include="Models\DonationDenomination.cs" />
+    <Compile Include="Models\Denomination.cs" />
     <Compile Include="Models\EventInfo.cs" />
     <Compile Include="Models\EventManager.cs" />
     <Compile Include="Ninject\FundsFKidsNinjectModule.cs" />
