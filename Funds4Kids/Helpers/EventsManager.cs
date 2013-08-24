@@ -1,4 +1,4 @@
-﻿using Funds4Kids.DTO;
+﻿using Funds4Kids.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,9 +15,21 @@ namespace Funds4Kids.Helpers
             Db = dbContext;
         }
 
-        public EventDTO GetEvent(int eventId)
+        public EventInfo GetEvent(int eventId)
         {
+            //var result = Db.EventInfos.First(ei => ei.Id == eventId);
+
+
+            //result.EventCoordinator = Db.EventCoordinators.First(ec => ec.Id == result.EventCoordinatorId);
+
+            //result.
+
+            //result.Denominations = Db.Denominations.Where(d => d.Amount == );
+
+            //return result;
+
             throw new NotImplementedException();
+
         }
 
         public void RecordDonation(int eventId, decimal amount, string senderEmail)

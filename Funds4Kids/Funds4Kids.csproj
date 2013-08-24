@@ -179,6 +179,7 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\EventsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="DTO\EventDTO.cs" />
     <Compile Include="Filters\InitializeSimpleMembershipAttribute.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -186,6 +187,10 @@
     <Compile Include="Helpers\IPaymentsManager.cs" />
     <Compile Include="Helpers\Funds4KidsContext.cs" />
     <Compile Include="Helpers\IFunds4KidsContext.cs" />
+    <Compile Include="Migrations\201308242015240_InitialCreate.cs" />
+    <Compile Include="Migrations\201308242015240_InitialCreate.Designer.cs">
+      <DependentUpon>201308242015240_InitialCreate.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountModels.cs" />
     <Compile Include="Models\Donation.cs" />
@@ -327,6 +332,11 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201308242015240_InitialCreate.resx">
+      <DependentUpon>201308242015240_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
