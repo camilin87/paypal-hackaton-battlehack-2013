@@ -50,7 +50,7 @@ namespace Funds4Kids.Migrations
                         Name = c.String(nullable: false, maxLength: 512),
                         Description = c.String(nullable: false),
                         ImageUrl = c.String(),
-                        CloseDate = c.DateTime(nullable: false),
+                        CloseDate = c.DateTime(nullable: false, defaultValue: DateTime.Today.AddDays(30)),
                         Goal = c.Decimal(nullable: false, precision: 18, scale: 2),
                         EventCoordinatorId = c.Int(nullable: false),
                     })
