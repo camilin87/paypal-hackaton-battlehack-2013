@@ -187,10 +187,13 @@
     <Compile Include="Helpers\IEventsManager.cs" />
     <Compile Include="Helpers\IPaymentsManager.cs" />
     <Compile Include="Helpers\Funds4KidsContext.cs" />
-    <Compile Include="Helpers\IFunds4KidsContext.cs" />
     <Compile Include="Migrations\201308242015240_InitialCreate.cs" />
     <Compile Include="Migrations\201308242015240_InitialCreate.Designer.cs">
       <DependentUpon>201308242015240_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201308242140079_DonationsHaveEventInfo.cs" />
+    <Compile Include="Migrations\201308242140079_DonationsHaveEventInfo.Designer.cs">
+      <DependentUpon>201308242140079_DonationsHaveEventInfo.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountModels.cs" />
@@ -340,6 +343,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201308242015240_InitialCreate.resx">
       <DependentUpon>201308242015240_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201308242140079_DonationsHaveEventInfo.resx">
+      <DependentUpon>201308242140079_DonationsHaveEventInfo.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

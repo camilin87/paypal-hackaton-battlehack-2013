@@ -9,9 +9,9 @@ namespace Funds4Kids.Helpers
 {
     public class EventsManager : IEventsManager
     {
-        private IFunds4KidsContext Db { get; set; }
+        private Funds4KidsContext Db { get; set; }
 
-        public EventsManager(IFunds4KidsContext dbContext)
+        public EventsManager(Funds4KidsContext dbContext)
         {
             Db = dbContext;
         }
@@ -31,7 +31,15 @@ namespace Funds4Kids.Helpers
 
         public void RecordDonation(int eventId, decimal amount, string senderEmail)
         {
-            throw new NotImplementedException();
+            Donation createdDonation = new Donation();
+
+            createdDonation.Amount = amount;
+            createdDonation.EventInfo = Db.EventInfos.FirstOrDefault(ei => ei.Id == eventId);
+            createdDonation.EventInfoId = eventId;
+            createdDonation.SenderEmail = senderEmail;
+
+            Db.Donations.Add(createdDonation);
+            Db.SaveChanges();
         }
 
         public EventInfo SaveEvent(EventInfo entity)
