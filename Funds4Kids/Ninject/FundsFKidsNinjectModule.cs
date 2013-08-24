@@ -13,6 +13,7 @@ namespace Funds4Kids.Ninject
         public override void Load()
         {
             //Setup Injections
+            //Bind<Funds4KidsContext>().ToSelf();
             Bind<IPaymentsManager>().To<PaymentsManager>().InRequestScope();
             Bind<IEventsManager>().To<EventsManager>().InRequestScope();
         }

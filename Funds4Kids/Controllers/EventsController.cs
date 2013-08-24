@@ -61,6 +61,7 @@ namespace Funds4Kids.Controllers
         [HttpPost]
         public ActionResult CreateEvent(EventInfo model)
         {
+            EventsManager.SaveEvent(model);
             return View("EventDetails", model);
         }
 

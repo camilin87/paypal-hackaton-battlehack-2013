@@ -6,5 +6,6 @@ namespace Funds4Kids.Helpers
     {
         EventInfo GetEvent(int eventId);
         void RecordDonation(int eventId, decimal amount, string senderEmail);
+        EventInfo SaveEvent(EventInfo entity);
     }
 }

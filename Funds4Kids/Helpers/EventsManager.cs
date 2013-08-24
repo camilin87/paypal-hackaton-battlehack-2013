@@ -4,42 +4,37 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using Ninject;
 
 namespace Funds4Kids.Helpers
 {
     public class EventsManager : IEventsManager
     {
-        private Funds4KidsContext Db { get; set; }
 
-        public EventsManager(Funds4KidsContext dbContext)
+        public EventsManager()
         {
-            Db = dbContext;
         }
 
         public EventInfo GetEvent(int eventId)
         {
-            var eventResult = Db.EventInfos.First(ei => ei.Id == eventId);
+            //var result = Db.EventInfos.First(ei => ei.Id == eventId);
 
-            eventResult.Donations = Db.Donations.Where(d => d.EventInfoId == eventResult.Id).ToArray();
-            
-            eventResult.Denominations= Db.Denominations.Where(d => d.EventInfoId == eventResult.Id).ToArray();
 
-            eventResult.EventCoordinator = Db.EventCoordinators.First(ec => ec.Id == eventResult.EventCoordinatorId);
+            //result.EventCoordinator = Db.EventCoordinators.First(ec => ec.Id == result.EventCoordinatorId);
 
-            return eventResult;
+            //result.
+
+            //result.Denominations = Db.Denominations.Where(d => d.Amount == );
+
+            //return result;
+
+            throw new NotImplementedException();
+
         }
 
         public void RecordDonation(int eventId, decimal amount, string senderEmail)
         {
-            Donation createdDonation = new Donation();
-
-            createdDonation.Amount = amount;
-            createdDonation.EventInfo = Db.EventInfos.FirstOrDefault(ei => ei.Id == eventId);
-            createdDonation.EventInfoId = eventId;
-            createdDonation.SenderEmail = senderEmail;
-
-            Db.Donations.Add(createdDonation);
-            Db.SaveChanges();
+            throw new NotImplementedException();
         }
 
         public EventInfo SaveEvent(EventInfo entity)
