@@ -10,6 +10,7 @@ using Microsoft.Web.WebPages.OAuth;
 using WebMatrix.WebData;
 using Funds4Kids.Filters;
 using Funds4Kids.Models;
+using Funds4Kids.Helpers;
 
 namespace Funds4Kids.Controllers
 {
@@ -263,7 +264,7 @@ namespace Funds4Kids.Controllers
             if (ModelState.IsValid)
             {
                 // Insert a new user into the database
-                using (Database db = new Database())
+                using (var db = new Funds4KidsContext())
                 {
                     UserProfile user = db.UserProfiles.FirstOrDefault(u => u.UserName.ToLower() == model.UserName.ToLower());
                     // Check if user already exists

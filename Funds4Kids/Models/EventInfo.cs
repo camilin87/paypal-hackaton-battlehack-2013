@@ -39,7 +39,7 @@ namespace Funds4Kids.Models
         public virtual ICollection<Donation> Donations { get; set; }
         public virtual ICollection<Denomination> Denominations { get; set; }
 
-        public int EventManagerId { get; set; }
-        public virtual EventManager EventManager { get; set; }
+        public int EventCoordinatorId { get; set; }
+        public virtual EventCoordinator EventCoordinator { get; set; }
     }
 }

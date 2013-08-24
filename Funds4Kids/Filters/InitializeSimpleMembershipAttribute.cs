@@ -5,6 +5,7 @@ using System.Threading;
 using System.Web.Mvc;
 using WebMatrix.WebData;
 using Funds4Kids.Models;
+using Funds4Kids.Helpers;
 
 namespace Funds4Kids.Filters
 {
@@ -25,11 +26,11 @@ namespace Funds4Kids.Filters
         {
             public SimpleMembershipInitializer()
             {
-                Database.SetInitializer<Database>(null);
+                Database.SetInitializer<Funds4KidsContext>(null);
 
                 try
                 {
-                    using (var context = new Database())
+                    using (var context = new Funds4KidsContext())
                     {
                         if (!context.Database.Exists())
                         {

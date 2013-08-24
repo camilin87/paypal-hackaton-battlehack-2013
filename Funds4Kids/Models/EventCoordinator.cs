@@ -7,7 +7,7 @@ using System.Web;
 
 namespace Funds4Kids.Models
 {
-    public class EventManager
+    public class EventCoordinator
     {
         [Key]
         [DatabaseGeneratedAttribute(DatabaseGeneratedOption.Identity)]
