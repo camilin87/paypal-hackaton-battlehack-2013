@@ -183,7 +183,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Helpers\EventsManager.cs" />
+    <Compile Include="Helpers\IPaymentsManager.cs" />
     <Compile Include="Helpers\Funds4KidsContext.cs" />
     <Compile Include="Helpers\IFunds4KidsContext.cs" />
     <Compile Include="Migrations\Configuration.cs" />
@@ -319,6 +319,7 @@
     <Content Include="Views\Events\Fund.cshtml" />
     <Content Include="Views\Events\Thankyou.cshtml" />
     <Content Include="Views\Events\CancelPayment.cshtml" />
+    <Content Include="Views\Events\Event.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

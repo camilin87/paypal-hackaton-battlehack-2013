@@ -5,7 +5,7 @@ using PayPal.AdaptivePayments.Model;
 
 namespace Funds4Kids.Helpers
 {
-    public class PaymentsManager
+    public class PaymentsManager : IPaymentsManager
     {
         public string Pay(string senderEmail, string receiverEmail, decimal amount, string returnUrl, string cancelUrl)
         {
