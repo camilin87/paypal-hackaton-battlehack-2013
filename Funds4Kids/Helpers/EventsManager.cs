@@ -21,17 +21,12 @@ namespace Funds4Kids.Helpers
             var eventResult = Db.EventInfos.First(ei => ei.Id == eventId);
 
             eventResult.Donations = Db.Donations.Where(d => d.EventInfoId == eventResult.Id).ToArray();
+            
+            eventResult.Denominations= Db.Denominations.Where(d => d.EventInfoId == eventResult.Id).ToArray();
 
             eventResult.EventCoordinator = Db.EventCoordinators.First(ec => ec.Id == eventResult.EventCoordinatorId);
 
-            
-
-            //result.Denominations = Db.Denominations.Where(d => d.Amount == );
-
-            //return result;
-
-            throw new NotImplementedException();
-
+            return eventResult;
         }
 
         public void RecordDonation(int eventId, decimal amount, string senderEmail)
