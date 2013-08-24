@@ -4,11 +4,12 @@
 .donate-button {
     margin-right: 2%;
     margin-left: 2%;
-    padding-top: 15%;
     padding-bottom: 5%;
     padding-left: 7%;
     padding-right: 7%;
 }
+
+
 
 /************************************************************************************************/
 
@@ -18,7 +19,13 @@ a:hover, a:focus {
     text-decoration: none !important;
 }
 
+body {
+    height: 100% !important;
+}
 
+.donate-button {
+    padding-top: 5% !important;
+}
 
 /************************************************************************************************/
 
