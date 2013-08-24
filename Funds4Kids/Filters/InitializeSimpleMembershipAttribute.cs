@@ -25,11 +25,11 @@ namespace Funds4Kids.Filters
         {
             public SimpleMembershipInitializer()
             {
-                Database.SetInitializer<UsersContext>(null);
+                Database.SetInitializer<Database>(null);
 
                 try
                 {
-                    using (var context = new UsersContext())
+                    using (var context = new Database())
                     {
                         if (!context.Database.Exists())
                         {

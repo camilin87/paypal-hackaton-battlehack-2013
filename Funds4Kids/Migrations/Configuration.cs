@@ -5,14 +5,14 @@ namespace Funds4Kids.Migrations
     using System.Data.Entity.Migrations;
     using System.Linq;
 
-    internal sealed class Configuration : DbMigrationsConfiguration<Funds4Kids.Models.UsersContext>
+    internal sealed class Configuration : DbMigrationsConfiguration<Funds4Kids.Helpers.Database>
     {
         public Configuration()
         {
             AutomaticMigrationsEnabled = true;
         }
 
-        protected override void Seed(Funds4Kids.Models.UsersContext context)
+        protected override void Seed(Funds4Kids.Helpers.Database context)
         {
             //  This method will be called after migrating to the latest version.
 
