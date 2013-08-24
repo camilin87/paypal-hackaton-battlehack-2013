@@ -19,5 +19,8 @@ namespace Funds4Kids.Models
         [Range(1, 100)]
         [DataType(DataType.Currency)]
         public decimal Amount { get; set; }
+
+        public int EventInfoId { get; set; }
+        public virtual EventInfo EventInfo { get; set; }
     }
 }

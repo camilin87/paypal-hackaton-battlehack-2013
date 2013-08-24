@@ -18,12 +18,13 @@ namespace Funds4Kids.Helpers
 
         public EventInfo GetEvent(int eventId)
         {
-            //var result = Db.EventInfos.First(ei => ei.Id == eventId);
+            var eventResult = Db.EventInfos.First(ei => ei.Id == eventId);
 
+            eventResult.Donations = Db.Donations.Where(d => d.EventInfoId == eventResult.Id).ToArray();
 
-            //result.EventCoordinator = Db.EventCoordinators.First(ec => ec.Id == result.EventCoordinatorId);
+            eventResult.EventCoordinator = Db.EventCoordinators.First(ec => ec.Id == eventResult.EventCoordinatorId);
 
-            //result.
+            
 
             //result.Denominations = Db.Denominations.Where(d => d.Amount == );
 
