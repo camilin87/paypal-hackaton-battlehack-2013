@@ -7,7 +7,7 @@ using System.Web;
 
 namespace Funds4Kids.Helpers
 {
-    public class Funds4KidsContext : DbContext
+    public class Funds4KidsContext : DbContext, Funds4Kids.Helpers.IFunds4KidsContext
     {
         public Funds4KidsContext()
             : base("DefaultConnection")
