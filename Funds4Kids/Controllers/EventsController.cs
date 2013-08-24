@@ -16,5 +16,15 @@ namespace Funds4Kids.Controllers
             return View();
         }
 
+        public ActionResult Thankyou()
+        {
+            return View();
+        }
+
+        public ActionResult CancelPayment()
+        {
+            return View();
+        }
+
     }
 }
