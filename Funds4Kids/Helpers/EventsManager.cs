@@ -1,4 +1,5 @@
-﻿using Funds4Kids.Models;
+﻿using System.Data;
+using Funds4Kids.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -36,5 +37,27 @@ namespace Funds4Kids.Helpers
         {
             throw new NotImplementedException();
         }
+
+        public EventInfo SaveEvent(EventInfo entity)
+        {
+            EventInfo result;
+
+            using (var dataContext = new Funds4KidsContext())
+            {
+                if (entity.Id == 0)
+                    result = dataContext.EventInfos.Add(entity);
+                else
+                {
+                    result = dataContext.EventInfos.Attach(entity);
+                    var entry = dataContext.Entry(entity);
+                    entry.State = EntityState.Modified;
+                }
+
+                dataContext.SaveChanges();
+            }
+
+            return result;
+        }
+
     }
 }
