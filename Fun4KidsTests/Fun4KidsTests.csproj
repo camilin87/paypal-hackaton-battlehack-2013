@@ -3,7 +3,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>5272d22f-5807-47e0-9d50-f0c67097336e</ProjectGuid>
+    <ProjectGuid>{1A4117CE-0396-4152-96F7-CA1C729842A5}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Fun4KidsTests</RootNamespace>
