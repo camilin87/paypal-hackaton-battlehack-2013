@@ -190,7 +190,7 @@
     <Compile Include="Models\EventInfo.cs" />
     <Compile Include="Models\EventManager.cs" />
     <Compile Include="Ninject\FundsFKidsNinjectModule.cs" />
-    <Compile Include="PaymentsManager.cs" />
+    <Compile Include="Helpers\PaymentsManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
