@@ -1,0 +1,88 @@
+﻿@model FundsForKids.Models.EventModel
+
+@{
+    ViewBag.Title = "CreateEvent";
+}
+
+<div class="container" style="margin-left: 35%">
+    <div class="span12">
+        <h2>Create Event</h2>
+        <br/>
+        @using (Html.BeginForm()) {
+            @Html.ValidationSummary(true)
+
+            <fieldset>
+                <legend>Event</legend>
+
+                <div class="editor-label">
+                    @Html.LabelFor(model => model.Event.Name)
+                </div>
+                <div class="editor-field">
+                    @Html.EditorFor(model => model.Event.Name)
+                    @Html.ValidationMessageFor(model => model.Event.Name)
+                </div>
+
+                <div class="editor-label">
+                    @Html.LabelFor(model => model.Event.Description)
+                </div>
+                <div class="editor-field">
+                    @Html.EditorFor(model => model.Event.Description)
+                    @Html.ValidationMessageFor(model => model.Event.Description)
+                </div>
+
+                <div class="editor-label">
+                    @Html.LabelFor(model => model.Event.CloseDate)
+                </div>
+                <div class="editor-field">
+                    @Html.EditorFor(model => model.Event.CloseDate)
+                    @Html.ValidationMessageFor(model => model.Event.CloseDate)
+                </div>
+
+                <div class="editor-label">
+                    @Html.LabelFor(model => model.Event.ImageUrl)
+                </div>
+                <div class="editor-field">
+                    @Html.EditorFor(model => model.Event.ImageUrl)
+                    @Html.ValidationMessageFor(model => model.Event.ImageUrl)
+                </div>
+
+                <div class="editor-label">
+                    @Html.LabelFor(model => model.Event.Goal)
+                </div>
+                <div class="editor-field">
+                    @Html.EditorFor(model => model.Event.Goal)
+                    @Html.ValidationMessageFor(model => model.Event.Goal)
+                </div>
+                <br/>
+                <div>Select the amounts of money the users will be able to select</div>
+                <br/>
+                <div class="span1">
+                    $&nbsp;@Html.DropDownListFor(model => model.Denomination1, new SelectList(Model.AvailableDenoms, "DenominationId", "Amount"))
+                </div>
+                <div class="span1">
+                    $&nbsp;@Html.DropDownListFor(model => model.Denomination2, new SelectList(Model.AvailableDenoms, "DenominationId", "Amount"))
+                </div>
+                <div class="span1">
+                    $&nbsp;@Html.DropDownListFor(model => model.Denomination3, new SelectList(Model.AvailableDenoms, "DenominationId", "Amount"))
+                </div>
+                @*<div class="editor-label">
+            @Html.LabelFor(model => model.CoordinatorId)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.CoordinatorId)
+            @Html.ValidationMessageFor(model => model.CoordinatorId)
+        </div>*@
+                <div>
+                    <br/><br/>
+                    <p>
+                        <input type="submit" value="Create" class="btn btn-primary" style="width: 25%"/>
+                    </p>
+                </div>
+            </fieldset>
+        }
+    </div>
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

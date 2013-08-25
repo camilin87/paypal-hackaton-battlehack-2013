@@ -1,0 +1,98 @@
+﻿@model FundsForKids.Models.EventModel
+
+@{
+    ViewBag.Title = "Event";
+}
+@using (Html.BeginForm("Fund", "Events", FormMethod.Post, new {id="eventForm"}))
+{
+   @Html.ValidationSummary(true)
+    <div class="container">
+        <br/><br/><br/>
+        <div class="row">
+            <div class="span12 pagination-centered">
+                <h1>@Model.Event.Name</h1>
+            </div>
+        </div>
+        <br/><br/>
+        <div class="row">
+            <div class="span12 pagination-centered">
+                <div class="span1"></div>
+                <div class="span10">
+                    <div class="thumbnail" style="margin-left: 23%; margin-right: 23%;">
+                        <img src="@Model.Event.ImageUrl" alt="team"/>
+                    </div>
+                    <br/>
+                    <div class="alert alert-success text-left" style="font-size: 2.85em; line-height: 50px;">
+                        <p>
+                            @Model.Event.Description
+                            <a> More...</a>
+                        </p>
+                    </div>
+                </div>
+                <div class="span1"></div>
+            </div>
+        </div>
+        <br/>
+        <div class="row">
+            <div class="span12 pagination-centered">
+                <div class="span1"></div>
+                <div class="span10">
+                    <div class="progress progress-success" style="height: 40px;">
+                        <div class="bar" style="width: @Model.Donations"></div>
+                    </div>
+                    <div class="pull-right" style="font-size: 50px;">
+                        <p>@Model.Event.Goal</p>
+                    </div>
+                </div>
+                <div class="span1"></div>
+            </div>
+
+        </div>
+        <br/><br/>
+        <div>
+            @Html.LabelFor(model => model.PaypalEmail)
+            @Html.TextBoxFor(model => model.PaypalEmail, new {id = "paypalEmail"})
+            @Html.ValidationMessageFor(model => model.PaypalEmail)
+            @Html.HiddenFor(model => model.Event.EventId)
+            @*<br/><br/>
+                @Html.LabelFor(m => m.ConfirmPaypalEmail)
+                @Html.TextBoxFor(m => m.ConfirmPaypalEmail)*@
+        </div>
+        <br/><br/>
+        <div class="row">
+            <div class="span12 pagination-centered">
+                <div class="span1"></div>
+                <div class="span10" style="line-height: 60px">
+                    @foreach (var denomination in Model.AvailableDenoms)
+                    {
+                        <button type="button" onclick="submitPayment(@denomination.Amount)">@denomination.Amount</button>
+                            @*<a href="@Url.Action("Fund", "Events", new {eventId = @Model.Event.EventId, amount = @denomination.Amount, senderEmail="javascript:$('#paypalEmail').val()"})" class="btn-primary donate-button">@denomination.Amount</a>*@
+                    }
+                </div>
+                <div class="span1"></div>
+            </div>
+        </div>
+        <br/><br/>
+    </div>
+}
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
+
+
+<script type="text/javascript">
+    function submitPayment(amount) {
+        var form = $('#eventForm');
+        
+        if (form.valid()) {
+            var hiddenField = document.createElement("input");
+            hiddenField.setAttribute("type", "hidden");
+            hiddenField.setAttribute("name", "amount");//getParam("clt");
+            hiddenField.setAttribute("value", amount);
+            form[0].appendChild(hiddenField);
+            form.submit();
+        }
+    }
+</script>
+

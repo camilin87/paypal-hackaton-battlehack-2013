@@ -1,0 +1,72 @@
+﻿@model FundsForKids.Models.RegisterModel
+@{
+    ViewBag.Title = "Register";
+}
+<div class="container" style="margin-left: 35%">
+    <div class="row">
+        <div class="span12">
+            <hgroup class="title">
+                <h1>@ViewBag.Title.</h1>
+                <h2>Create a new account.</h2>
+            </hgroup>
+            
+        </div>
+    </div>
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+        <div class="row">
+            <div class="span12">
+                @Html.ValidationSummary()
+                <br/>
+            </div>
+        </div>
+        <div class="row">
+            <div class="span12">
+                @Html.LabelFor(m => m.UserName)
+                <br/>
+                @Html.TextBoxFor(m => m.UserName)
+            </div>
+        </div>
+        <div class="row">
+            <div class="span12">
+                @Html.LabelFor(m => m.Password)
+                <br/>
+                @Html.PasswordFor(m => m.Password)
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="span12">
+                @Html.LabelFor(m => m.ConfirmPassword)
+                <br/>
+                @Html.PasswordFor(m => m.ConfirmPassword)
+            </div>
+        </div>
+        <div class="row">
+            <div class="span12">
+                @Html.LabelFor(m => m.PaypalEmail)
+                <br/>
+                @Html.TextBoxFor(m => m.PaypalEmail)
+            </div>
+        </div>
+        <div class="row">
+            <div class="span12">
+                @Html.LabelFor(m => m.ConfirmPaypalEmail)
+                <br/>
+                @Html.TextBoxFor(m => m.ConfirmPaypalEmail)
+            </div>
+        </div>
+        <br/>
+        <br/>
+        <div class="row">
+            <div class="span12">
+                <input type="submit" class="btn btn-primary" value="Register" style="width: 26%" />
+            </div>
+        </div>
+    }
+</div>
+
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

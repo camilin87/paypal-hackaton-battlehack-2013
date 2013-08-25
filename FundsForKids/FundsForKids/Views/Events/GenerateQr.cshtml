@@ -1,0 +1,37 @@
+﻿@{
+    ViewBag.Title = "GenerateQr";
+}
+
+<div class="container" style="margin-left: 40%">
+    <div class="row">
+        <div class="span12">
+            <h2>Your Event Code</h2><br/>
+            <div id="qrcode"></div>
+
+        </div>
+    </div>
+</div>
+
+
+<script src="~/Scripts/qrcode.js"></script>
+<script type="text/javascript">
+    var qrcode = new QRCode("qrcode");
+
+    function makeCode() {
+        var elText = "http://localhost:8098/Events/Event?eventId=" + "3";
+
+        qrcode.makeCode(elText);
+    }
+
+    makeCode();
+
+    $("#text").
+        on("blur", function () {
+            makeCode();
+        }).
+        on("keydown", function (e) {
+            if (e.keyCode == 13) {
+                makeCode();
+            }
+        });
+</script>
