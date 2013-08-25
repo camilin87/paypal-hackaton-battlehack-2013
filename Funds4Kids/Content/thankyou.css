@@ -1,0 +1,14 @@
+﻿body {
+    background-color: #FCEEC2 !important;
+    font-family: Georgia, "Times New Roman", Times, Serif;
+}
+.thankyou{
+    margin: 1em 0 0.5em 0;
+    color: #343434;
+    font-weight: normal;
+    font-family: 'Ultra', sans-serif !important;   
+    line-height: 42px;
+    text-transform: uppercase;
+    text-shadow: 0 2px white, 0 3px #777;
+}
+
