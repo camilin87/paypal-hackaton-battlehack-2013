@@ -9,7 +9,7 @@ namespace Funds4Kids.Migrations
     {
         public Configuration()
         {
-            AutomaticMigrationsEnabled = true;
+            //AutomaticMigrationsEnabled = true;
         }
 
         protected override void Seed(Funds4Kids.Helpers.Funds4KidsContext context)
